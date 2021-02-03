@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "59f77e12-9435-4a8b-acf3-fc3adcbb07db",
+		"name": "Devs Meet Meetup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Event List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/events",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Evet By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/events/7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"events",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Created Title\",\n    \"description\":\"Created Description\",\n    \"instructorId\":1,\n    \"image\":\"createdImage.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/events",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Updated Title\",\n    \"description\":\"Updated Description\",\n    \"instructorId\":1,\n    \"image\":\"updatedImage.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/events/9",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"events",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/events/9",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"events",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Participants of Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/events/9/participants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"events",
+								"9",
+								"participants"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participant",
+			"item": [
+				{
+					"name": "Participant List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/participants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"participants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Participant By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/participants/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"participants",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Participant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Created Participant\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/participants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"participants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Participant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Participant\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/participants/10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"participants",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Participant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/participants/10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"participants",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events of Participant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/participants/4/events",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"participants",
+								"4",
+								"events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instructor",
+			"item": [
+				{
+					"name": "Instructor List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/instructors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"instructors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Instructor By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/instructors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"instructors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Instructor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Created Instructor\",\n    \"profession\":\"Created Profession\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/instructors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"instructors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Instructor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Updated Instructor\",\n    \"profession\":\"Updated Profession\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/instructors/11",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"instructors",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Instructor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/instructors/11",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"instructors",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
