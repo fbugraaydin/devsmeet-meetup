@@ -1,6 +1,6 @@
 ## DevsMeet Meetup
 
-![Meetup Flow](screenshots/meetupflow.png?raw=true)
+![Meetup Flow](meetupflow.png?raw=true)
 
-https://devsmeet-meetup.herokuapp.com/
+Application Url: https://devsmeet-meetup.herokuapp.com/
 
