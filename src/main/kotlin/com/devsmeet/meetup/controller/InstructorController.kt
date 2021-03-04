@@ -4,8 +4,8 @@ import com.devsmeet.meetup.InstructorDto
 import com.devsmeet.meetup.InstructorRequest
 import com.devsmeet.meetup.services.InstructorService
 import org.springframework.http.HttpStatus
-import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/instructors")
@@ -19,12 +19,12 @@ class InstructorController(private val instructorService: InstructorService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun createInstructor(@Validated @RequestBody req: InstructorRequest) {
+    fun createInstructor(@Valid @RequestBody req: InstructorRequest) {
         instructorService.createInstructor(InstructorDto(name = req.name, profession = req.profession))
     }
 
     @PutMapping("/{id}")
-    fun updateInstructor(@Validated @RequestBody req: InstructorRequest, @PathVariable id: Long) {
+    fun updateInstructor(@Valid @RequestBody req: InstructorRequest, @PathVariable id: Long) {
         instructorService.updateInstructor(InstructorDto(id = id, name = req.name, req.profession))
     }
 

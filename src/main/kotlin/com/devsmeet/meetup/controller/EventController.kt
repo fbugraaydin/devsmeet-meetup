@@ -6,9 +6,9 @@ import com.devsmeet.meetup.services.EventService
 import com.devsmeet.meetup.services.InstructorService
 import com.devsmeet.meetup.services.ParticipantService
 import org.springframework.http.HttpStatus
-import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 import java.time.LocalDate
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/events")
@@ -24,7 +24,7 @@ class EventController(private val eventService: EventService,
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun createEvent(@Validated @RequestBody req: EventRequest){
+    fun createEvent(@Valid @RequestBody req: EventRequest){
         val instructorDto = instructorService.getInstructorById(req.instructorId)
         val event = EventDto(title = req.title, description = req.description,
                 instructor = instructorDto, date = LocalDate.now().plusDays(4))
@@ -32,7 +32,7 @@ class EventController(private val eventService: EventService,
     }
 
     @PutMapping("/{id}")
-    fun updateEvent(@Validated @RequestBody req: EventRequest, @PathVariable id: Long) {
+    fun updateEvent(@Valid @RequestBody req: EventRequest, @PathVariable id: Long) {
         val instructorDto = instructorService.getInstructorById(req.instructorId)
         val event = EventDto(title = req.title, description = req.description,
                 instructor = instructorDto, date = LocalDate.now().plusDays(4))

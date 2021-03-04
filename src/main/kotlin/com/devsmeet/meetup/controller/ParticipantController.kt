@@ -6,8 +6,8 @@ import com.devsmeet.meetup.ParticipantRequest
 import com.devsmeet.meetup.services.EventService
 import com.devsmeet.meetup.services.ParticipantService
 import org.springframework.http.HttpStatus
-import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/participants")
@@ -22,12 +22,12 @@ class ParticipantController(private val participantService: ParticipantService,
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun createParticipant(@Validated @RequestBody req: ParticipantRequest) {
+    fun createParticipant(@Valid @RequestBody req: ParticipantRequest) {
         participantService.createParticipant(ParticipantDto(name = req.name))
     }
 
     @PutMapping("/{id}")
-    fun updateParticipant(@Validated @RequestBody req: ParticipantRequest, @PathVariable id: Long) {
+    fun updateParticipant(@Valid @RequestBody req: ParticipantRequest, @PathVariable id: Long) {
         participantService.updateParticipant(ParticipantDto(id = id, name = req.name))
     }
 
@@ -36,7 +36,7 @@ class ParticipantController(private val participantService: ParticipantService,
     fun deleteParticipantById(@PathVariable id: Long) = participantService.deleteParticipantById(id)
 
     @PatchMapping("/{id}")
-    fun joinToEvent(@Validated @RequestBody req: JoinToEventRequest, @PathVariable id: Long) {
+    fun joinToEvent(@Valid @RequestBody req: JoinToEventRequest, @PathVariable id: Long) {
         participantService.updateParticipantEvents(id, req.participantId)
     }
 
